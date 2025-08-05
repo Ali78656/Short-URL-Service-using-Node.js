@@ -2,14 +2,15 @@
   "name": "short-url",
   "version": "1.0.0",
   "description": "A custom Url Shortner",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.7",
+    "dotenv": "^17.2.1",
     "ejs": "^3.1.10",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",

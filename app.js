@@ -1,6 +1,6 @@
+require("dotenv").config();
 const express = require("express");
 const app = express();
-const Port = 8001;
 const path = require("path");
 const urlRoute = require("./routes/url");
 const { connectDB } = require("./connect");
@@ -10,7 +10,10 @@ const cookierParser = require('cookie-parser');
 const { restrictToLoggedInUserOnly, checkAuth} = require("./middlewares/auth");
 // const Url = require("./models/url");
 
-connectDB("mongodb://localhost:27017/shortUrl")
+const Port = process.env.PORT || 8001;
+
+
+connectDB(process.env.MONGO_URL)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Failed to connect to MongoDB", err));
 
